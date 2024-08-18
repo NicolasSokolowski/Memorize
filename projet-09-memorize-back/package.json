@@ -1,0 +1,36 @@
+{
+  "name": "projet-09-memorize-back",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "DEBUG=memorize-server:* nodemon -L",
+    "start": "nodemon -L",
+    "db_reset": "dropdb memorize && createdb memorize && sqitch deploy && npm run db_seed",
+    "db_seed": "node './app/database/seedFakeData.js'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@faker-js/faker": "^8.4.1",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "eslint": "^8.56.0",
+    "nodemon": "^3.0.3"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "debug": "^4.3.4",
+    "dotenv": "^16.4.1",
+    "express": "^4.18.2",
+    "express-openapi": "^12.1.3",
+    "joi": "^17.12.1",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.11.3",
+    "swagger-ui-express": "^5.0.0",
+    "yamljs": "^0.3.0"
+  }
+}

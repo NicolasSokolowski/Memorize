@@ -1,0 +1,55 @@
+.flip-trainingcard {
+  background-color: transparent;
+  width: 300px;
+  height: 400px;
+  perspective: 1000px;
+  font-family: sans-serif;
+}
+
+.title {
+  font-size: 1.5em;
+  font-weight: 900;
+  text-align: center;
+  margin: 0;
+}
+
+.flip-trainingcard-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-trainingcard.flip .flip-trainingcard-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-trainingcard-front,
+.flip-trainingcard-back {
+  box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border: 1px solid #b4abce;
+  border-radius: 1rem;
+  background: linear-gradient(120deg, #B4ABCE 60%, #d0ccdc 88%,
+      #dddbe6 100%);
+}
+
+.flip-trainingcard-front {
+  background-color: #B4ABCE;
+  color: #ffffff #F1D7C4;
+}
+
+.flip-trainingcard-back {
+  background-color: (#B4ABCE);
+  color: #ffffff;
+  transform: rotateY(180deg);
+}

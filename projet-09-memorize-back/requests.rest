@@ -1,0 +1,156 @@
+# USER ROUTE
+
+## POST
+
+### Create a new account -- OK
+POST http://127.0.0.1:3000/api/account/ 
+Content-Type: application/json
+
+{
+    "email": "sahim@gmail.com",
+    "password": "Sahim!123",
+    "username": "Famantha" 
+}
+
+## GET
+
+### Get a single user -- OK
+
+GET http://127.0.0.1:3000/api/account/31
+
+### Update a single user informations -- OK
+
+PATCH http://127.0.0.1:3000/api/account/16
+Content-Type: application/json
+
+{
+    "username": "nikoula",
+    "email": "Fahim!123@gmail.com"
+}
+
+### Update a single user password-- OK
+
+PATCH http://127.0.0.1:3000/api/account/17/changepassword
+Content-Type: application/json
+
+{
+    "password": "Nikoula!123",
+    "newPassword": "Nikoula!123"
+}
+
+### Delete a single user -- OK
+
+DELETE http://127.0.0.1:3000/api/account/1
+
+######
+
+# DECK ROUTE
+
+## GET
+
+### Get all decks from a user -- OK
+
+GET http://127.0.0.1:3000/api/account/31/decks
+
+### Get a single deck from a user -- OK
+
+GET http://127.0.0.1:3000/api/account/3/decks/16
+
+## POST
+
+### Create a new deck -- OK
+
+POST http://127.0.0.1:3000/api/account/19/decks/
+Content-Type: application/json
+
+{
+    "name": "sauter dans le lit",
+    "description": "Some description for the new deck"
+}
+
+## PATCH
+
+### Update a single deck -- OK
+
+PATCH http://127.0.0.1:3000/api/account/3/decks/50
+Content-Type: application/json
+
+{
+    "name": "New namedee"
+}
+
+## DELETE
+
+### Delete a single deck -- OK
+
+DELETE http://127.0.0.1:3000/api/account/1/decks/16
+
+######
+
+# CARD ROUTE
+
+## GET
+
+### Get all cards from a deck -- OK
+GET http://127.0.0.1:3000/api/account/1/decks/50/cards
+
+### Get a single card from a deck -- OK
+
+GET http://127.0.0.1:3000/api/account/1/decks/50/cards/16
+
+## POST
+
+### Create a new card -- OK
+
+POST http://127.0.0.1:3000/api/account/1/decks/21/cards
+Content-Type: application/json
+
+{
+    "front": "frontt",
+    "back": "back!"
+}
+
+## PATCH
+
+### Update a single card -- OK
+
+PATCH http://127.0.0.1:3000/api/account/3/decks/1/cards/14
+Content-Type: application/json
+
+{
+    "back": "Back answer",
+    "front": "Los frontos"
+}
+
+## DELETE
+
+### Delete a single card -- OK
+
+DELETE http://127.0.0.1:3000/api/account/1/decks/21/cards/21
+
+######
+
+# AUTH ROUTE
+
+## POST
+
+### Log into an existing account -- OK
+POST http://127.0.0.1:3000/api/auth/ 
+Content-Type: application/json
+
+{
+    "email": "Nicolas123@gmail.com",
+    "password": "Nicolas123!"
+}
+
+### Try to log into a fake account -- OK
+POST http://127.0.0.1:3000/api/auth/ 
+Content-Type: application/json
+
+{
+    "email": "dd@gmail.com",
+    "password": "FakeBobPassword"
+}
+
+### 404 NOT FOUND 
+GET http://127.0.0.1:3000/api/truc
